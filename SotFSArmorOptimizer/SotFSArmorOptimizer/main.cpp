@@ -17,7 +17,7 @@ static void AOStart(Parser && _parser, AOSettings && _settings);
 static void TextInput(const char * path);
 static void UserInput(void);
 
-int main(int argc, char *argv[])
+int main(int, char *[])
 try
 {
   TextInput("Input.json");
@@ -45,13 +45,19 @@ try
   std::string buf = [&]
   {
     std::ifstream file{ path, std::ios::ate };
+    if (!file) return std::string{};
     std::streamsize size = file.tellg();
+
     std::string buf;
     buf.resize(static_cast<size_t>(size));
     file.seekg(0, std::ios::beg);
     file.read(&buf[0], size);
     return buf;
   }();
+
+  if (buf.empty())
+    throw AOException{ "Error reading file", AOException::AOError::badfile };
+
   rapidjson::StringStream ss{ buf.c_str() };
   rapidjson::Document doc;
   doc.ParseStream(ss);
@@ -79,6 +85,36 @@ try
     settings.stats[Faith]        = 4;
   }
 
+  // load forced armors
+  if (doc.HasMember("Forced Equipment"))
+  {
+    auto && Forced = doc["Forced Equipment"];
+    static const char * slots[4] = {
+      "Head", "Body", "Arms", "Legs"
+    };
+    int i = 0;
+    for (auto && slot : slots)
+    {
+      if (Forced.HasMember(slot))
+      {
+        auto && gear = Forced[slot];
+        if (gear.IsArray())
+        {
+          settings.AllowedGear[i].reserve(gear.GetArray().Size());
+          for (auto && id : gear.GetArray())
+          {
+            size_t offset = id.Get<size_t>() % 1000; // about 100 armor in each slot give or take, though
+
+            if (offset > parser.getSlot(i).size()) continue;
+
+            settings.AllowedGear[i].emplace_back(parser.getSlot(i)[offset]);
+          }
+        }
+      }
+      ++i;
+    }
+  }
+
   // load constraints
   if (doc.HasMember("Constraints"))
   {
@@ -101,9 +137,6 @@ try
 
   settings.optimizeFor = static_cast<DefenseType>(GetMember(doc, "Optimize For", 0));
 
-
-
-
   AOStart(std::move(parser), std::move(settings));
 }
 catch (AOException)
@@ -111,6 +144,8 @@ catch (AOException)
   throw;
 }
 
+// super deprecated. Moved to JSON (Text Input)
+#if 0
 static void UserInput(void)
 try
 {
@@ -159,6 +194,7 @@ catch (AOException)
 {
   throw;
 }
+#endif
 
 static void AOStart(Parser && _parser, AOSettings && _settings)
 {
@@ -166,13 +202,14 @@ static void AOStart(Parser && _parser, AOSettings && _settings)
   AOSettings settings = _settings;
   DefenseType optimizerfor = settings.optimizeFor;
 
-  settings.AllowedGear[0] = parser.moveHead();
-  settings.AllowedGear[1] = parser.moveBody();
-  settings.AllowedGear[2] = parser.moveArms();
-  settings.AllowedGear[3] = parser.moveLegs();
-
-  for (size_t i = 0; i < 4; ++i)
-    settings.AllowedGear[i].emplace_back(getDefault());
+  for (int i = 0; i < 4; ++i)
+  {
+    if (settings.AllowedGear[i].empty())
+    {
+      settings.AllowedGear[i] = parser.moveSlot(i);
+      settings.AllowedGear[i].emplace_back(getDefault());
+    }
+  }
 
   std::cout << "Working. . . ";
 

@@ -11,6 +11,10 @@ Stats:
 "Stat": stat
 Enter your build's stats without any armor equiped
 
+Forced Equipment:
+Using the itemids file, you may look up the id for the gear you wish to use.
+When the array is left blank, all gear will be considered for that slot.
+
 Constraints:
 "Stat": [ minimum, maximum ]
 Constraints will only select armor sets
@@ -21,4 +25,5 @@ Constraints will only select armor sets
  0 = poise
  1 = physical, 2 = strike, 3 = slash, 4 = thrust
  5 = magic, 6 = fire, 7 = lightning, 8 = dark,
- 9 = poison, 10 = bleed, 11 = petrification, 12 = curse
+ 9 = poison, 10 = bleed, 11 = petrification, 12 = 
+13 = lowest elemental resistance

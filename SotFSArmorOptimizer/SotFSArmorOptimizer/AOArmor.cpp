@@ -11,6 +11,7 @@ Armor const & getNothing()
     none.defenses.fill(0);
     none.weight = 0.0f;
     none.requirements.fill(0);
+    none.id = 9998;
 
     init = false;
   }
@@ -29,6 +30,7 @@ Armor const& getDefault()
     naked.defenses.fill(0);
     naked.weight = 0.0f;
     naked.requirements.fill(0);
+    naked.id = 9999;
 
     init = false;
   }

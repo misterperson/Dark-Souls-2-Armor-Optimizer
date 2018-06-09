@@ -16,7 +16,7 @@
   "Forced Equipment":
   {
     "Leave arrays blank for anything": 1,
-    "Head":[],
+    "Head":[13],
     "Body":[],
     "Arms":[],
     "Legs":[]
@@ -26,12 +26,12 @@
   "Constraints":
   {
 
-    "Poise":         [  54, 99999 ],
+    "Poise":         [  0, 99999 ],
 
-    "Physical":      [   400, 99999 ],
-    "Strike":        [   400, 99999 ],
-    "Slash":         [   400, 99999 ],
-    "Thrust":        [   400, 99999 ],
+    "Physical":      [   0, 99999 ],
+    "Strike":        [   0, 99999 ],
+    "Slash":         [   0, 99999 ],
+    "Thrust":        [   0, 99999 ],
 
     "Magic":         [ 0, 99999 ],
     "Fire":          [ 0, 99999 ],

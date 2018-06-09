@@ -131,6 +131,18 @@ std::vector<Armor> Parser::moveLegs() noexcept
   return blank;
 }
 
+std::vector<Armor> Parser::moveSlot(int i) noexcept
+{
+  std::vector<Armor> blank;
+  (&head + i)->swap(blank);
+  return blank;
+}
+
+std::vector<Armor> const & Parser::getSlot(int i) noexcept
+{
+  return *(&head + i);
+}
+
 
 static Armor ParseArmor(rapidjson::Value & value)
 {

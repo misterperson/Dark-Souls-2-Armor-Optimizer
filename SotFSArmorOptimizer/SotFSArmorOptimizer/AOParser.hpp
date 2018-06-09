@@ -40,5 +40,9 @@ private:
   std::vector<Armor> moveBody() noexcept;
   std::vector<Armor> moveArms() noexcept;
   std::vector<Armor> moveLegs() noexcept;
+
+  // potentially unsafe
+  std::vector<Armor> moveSlot(int i) noexcept;
+  std::vector<Armor> const& getSlot(int i) noexcept;
 }; 
 #endif
