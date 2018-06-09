@@ -24,10 +24,10 @@ struct Armor
 
 struct ArmorSet
 {
-  Armor * head;
-  Armor * body;
-  Armor * arms;
-  Armor * legs;
+  Armor const* head;
+  Armor const* body;
+  Armor const* arms;
+  Armor const* legs;
 
   float getWeight() const;
   size_t getStat(DefenseType stat) const;

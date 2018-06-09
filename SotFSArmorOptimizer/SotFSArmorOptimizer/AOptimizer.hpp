@@ -40,9 +40,9 @@ private:
   OptimalArmors optimal;
   float available;
 
-  void TryInsert(ArmorSet && set);
-  bool meetsConstraints(ArmorSet const& set) const;
-  bool elemental{ false };
+  //void TryInsert(ArmorSet && set);
+  //bool meetsConstraints(ArmorSet const& set) const;
+  //bool elemental{ false };
 public:
   Optimizer(AOSettings const& _settings);
   Optimizer(AOSettings && _settings);
