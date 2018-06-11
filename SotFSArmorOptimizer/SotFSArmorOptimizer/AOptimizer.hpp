@@ -23,6 +23,8 @@ struct AOSettings
 
   std::array<int, Stats::STATS_COUNT> stats; // used for armor requirements
 
+  std::array<size_t, DefenseType::DEFENSE_COUNT> baseDef;
+
   // QoL feature: only accept armor sets that meet the minimum defenses desired
   std::array<Constraint, DefenseType::DEFENSE_COUNT> constraints;
 

@@ -1,4 +1,3 @@
-#include <iostream>
 #include <fstream>
 #include <rapidjson/document.h>
 #include <rapidjson/rapidjson.h>
@@ -65,8 +64,6 @@ std::vector<Armor> Parser::LoadFile(const char * filename)
 // load everything from file
 Parser::Parser()
 {
-  std::cout << "Loading gear. . .";
-  
   try
   {
     head = LoadFile("Head.json");
@@ -76,11 +73,8 @@ Parser::Parser()
   }
   catch (AOException)
   {
-    std::cout << " error loading!\n";
     throw;
   }
-
-  std::cout << " done\n";
 }
 
 std::vector<Armor> const & Parser::getHead() const noexcept

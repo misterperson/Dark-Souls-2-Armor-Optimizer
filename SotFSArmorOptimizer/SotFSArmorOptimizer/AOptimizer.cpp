@@ -6,16 +6,24 @@
 struct ThreadSettings
 {
   std::array < Constraint, DefenseType::DEFENSE_COUNT> constraints;
+  std::array<size_t, DEFENSE_COUNT> baseDef;
+
   std::array<std::vector<size_t>, 4> allowed_ids;
+
   DefenseType optimizeFor;
 
   ThreadSettings(AOSettings const& settings) :
     optimizeFor{ settings.optimizeFor }
   {
-    for (size_t i = 0; i != DEFENSE_COUNT; ++i)
-    {
-      constraints[i] = settings.constraints[i];
-    }
+    std::copy(
+      settings.constraints.cbegin(), settings.constraints.cend(),
+      constraints.begin()
+    );
+
+    std::copy(
+      settings.baseDef.cbegin(), settings.baseDef.cend(),
+      baseDef.begin()
+    );
 
     for (size_t i = 0; i != 4; ++i)
     {
@@ -31,14 +39,14 @@ struct ThreadSettings
 
 static void TryInsert(ArmorSet && set, AOSettings const& settings, OptimalArmors & optimal)
 {
-  const size_t stat = set.getStat(settings.optimizeFor);
+  const size_t stat = set.getStat(settings.optimizeFor, settings.baseDef);
   auto && begin = optimal.begin();
   auto && end = optimal.end();
   while (begin != end)
   {
     if (!begin->first ||
       stat >
-      begin->second.getStat(settings.optimizeFor))
+      begin->second.getStat(settings.optimizeFor, settings.baseDef))
     {
       std::rotate(begin, end - 1, end);
       begin->first = true;
@@ -52,20 +60,22 @@ static void TryInsert(ArmorSet && set, AOSettings const& settings, OptimalArmors
 
 static void ThreadTryInsert(ArmorSet && set, ThreadSettings const& settings, OptimalArmors & optimal)
 {
-  const size_t stat = set.getStat(settings.optimizeFor);
+  const size_t stat = set.getStat(settings.optimizeFor, settings.baseDef);
   auto && begin = optimal.begin();
   auto && end = optimal.end();
   while (begin != end)
   {
     if (!begin->first ||
       stat >
-      begin->second.getStat(settings.optimizeFor))
+      begin->second.getStat(settings.optimizeFor, settings.baseDef))
     {
       std::rotate(begin, end - 1, end);
       begin->first = true;
       begin->second = set;
       return;
     }
+
+
 
     ++begin;
   }

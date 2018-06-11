@@ -7,6 +7,8 @@
 #include "AOptimizer.hpp"
 #include "AOParser.hpp"
 
+static bool output_id_for_cs = false;
+
 template<typename T>
 static T GetMember(rapidjson::Value & value, const char * name, T def)
 {
@@ -17,20 +19,33 @@ static void AOStart(Parser && _parser, AOSettings && _settings);
 static void TextInput(const char * path);
 static void UserInput(void);
 
-int main(int, char *[])
+int main(int argc, char *argv[])
 try
 {
+  if (argc > 1 && strcmp(argv[1], "-terse") == 0)
+  {
+    output_id_for_cs = true;
+  }
+
   TextInput("Input.json");
 
-  std::cout << "Press ENTER to continue . . .";
-  getc(stdin);
+  if (!output_id_for_cs)
+  {
+    std::cout << "Press ENTER to continue . . .";
+    getc(stdin);
+  }
+
+
   return 0;
 }
 catch (AOException err)
 {
   std::cout << err.what() << '\n';
-  std::cout << "Press ENTER to continue . . .";
-  getc(stdin);
+  if (!output_id_for_cs)
+  {
+    std::cout << "Press ENTER to continue . . .";
+    getc(stdin);
+  }
   return 2;
 }
 
@@ -76,6 +91,9 @@ try
     settings.stats[Dexterity]    = GetMember(stats, "Dexterity",    5); // Cleric
     settings.stats[Intelligence] = GetMember(stats, "Intelligence", 1); // Bandit
     settings.stats[Faith]        = GetMember(stats, "Faith",        4); // Sorcerer
+    
+    for (size_t i = 0; i != DefenseType::DEFENSE_COUNT; ++i)
+      settings.baseDef[i] = GetMember(stats, defenseType::stringsVerbose[i], 0);
   }
   else
   {
@@ -83,6 +101,7 @@ try
     settings.stats[Dexterity]    = 5;
     settings.stats[Intelligence] = 1;
     settings.stats[Faith]        = 4;
+    settings.baseDef.fill(0);
   }
 
   // load forced armors
@@ -136,6 +155,7 @@ try
   }
 
   settings.optimizeFor = static_cast<DefenseType>(GetMember(doc, "Optimize For", 0));
+
 
   AOStart(std::move(parser), std::move(settings));
 }
@@ -211,49 +231,75 @@ static void AOStart(Parser && _parser, AOSettings && _settings)
     }
   }
 
-  std::cout << "Working. . . ";
+  if(!output_id_for_cs)
+    std::cout << "Working. . . ";
 
   Optimizer optimizer{ std::move(settings) };
 
   bool result = optimizer.Optimize();
 
-  std::cout << "Done\n";
+  if (!output_id_for_cs)
+    std::cout << "Done\n";
 
   if (!result)
   {
-    std::cout << "No valid armor combination was found\n";
+    if (!output_id_for_cs)
+      std::cout << "No valid armor combination was found\n";
+    else
+      std::cout << "9999,9999,9999,9999\n";
+
     return;
   }
 
-  size_t count = 1;
-  for (auto && set : optimizer.getArmor())
+
+  if (!output_id_for_cs)
   {
-    if (set.first == false)
-      break;
-
-    std::cout << count++ << ") ";
-
-    auto && armorSet = set.second;
-    std::cout << armorSet.head->name << ", "
-      << armorSet.body->name << ", "
-      << armorSet.arms->name << ", "
-      << armorSet.legs->name << '\n';
-
-    std::cout << "Weight: " << armorSet.getWeight() << '\n';
-
-    for (size_t i = 0; i < DefenseType::DEFENSE_COUNT; ++i)
+    size_t count = 1;
+    for (auto && set : optimizer.getArmor())
     {
-      if (i == optimizerfor)
-        std::cout << '>';
+      if (set.first == false)
+        break;
 
-      std::cout << defenseType::strings[i] << ": "
-        << armorSet.getStat(static_cast<DefenseType>(i));
+      std::cout << count++ << ") ";
 
-      if (i == optimizerfor)
-        std::cout << '<';
+      auto && armorSet = set.second;
+      std::cout << armorSet.head->name << ", "
+        << armorSet.body->name << ", "
+        << armorSet.arms->name << ", "
+        << armorSet.legs->name << '\n';
+
+      std::cout << "Weight: " << armorSet.getWeight() << '\n';
+
+      for (size_t i = 0; i < DefenseType::DEFENSE_COUNT; ++i)
+      {
+        if (i == optimizerfor)
+          std::cout << '>';
+
+        std::cout << defenseType::strings[i] << ": "
+          << armorSet.getStat(static_cast<DefenseType>(i));
+
+        if (i == optimizerfor)
+          std::cout << '<';
+        std::cout << '\n';
+      }
+
       std::cout << '\n';
     }
-
-    std::cout << '\n';
   }
+  else
+  {
+    for (auto && set : optimizer.getArmor())
+    {
+      if (!set.first)
+        break;
+      
+      for (size_t i = 0; i != 3; ++i)
+        std::cout << (*(set.second.begin() + i))->id << ',';
+
+      std::cout << set.second.legs->id << '\n';
+    }
+  }
+
+
+
 }

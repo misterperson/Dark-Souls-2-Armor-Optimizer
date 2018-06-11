@@ -23,6 +23,7 @@
     <ProjectGuid>{B058FCA2-D9F8-4DB1-A06D-4D70FE24B0E7}</ProjectGuid>
     <RootNamespace>SotFSArmorOptimizer</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <ProjectName>ArmorOptimizer</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

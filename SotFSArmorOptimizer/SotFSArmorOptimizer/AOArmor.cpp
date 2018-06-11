@@ -1,5 +1,17 @@
 #include "AOArmor.hpp"
 
+Defenses const& getNoDefense(void)
+{
+  static bool init = true;
+  static Defenses defense{};
+  if (init)
+  {
+    defense.fill(0);
+    init = false;
+  }
+  return defense;
+}
+
 Armor const & getNothing()
 {
   static bool init = true;
@@ -43,27 +55,26 @@ float ArmorSet::getWeight() const
   return head->weight + body->weight + arms->weight + legs->weight;
 }
 
-size_t ArmorSet::getStat(DefenseType stat) const
+size_t ArmorSet::getStat(DefenseType stat, Defenses const& defense) const
 {
 
   if (stat == DefenseType::lowest_elemental)
   {
     std::array<size_t, 4> elementalDef;
-    elementalDef.fill(0);
 
     int i = DefenseType::magic;
     for (auto && def : elementalDef)
     {
+      def = defense[i];
       for (auto && gear : *this)
         def += gear->defenses[i];
       ++i;
     }
-
     return *std::min(elementalDef.cbegin(), elementalDef.cend());
   }
   else
   {
-    size_t total = 0;
+    size_t total = defense[stat];
     for (auto && gear : *this)
       total += gear->defenses[stat];
     return total;
