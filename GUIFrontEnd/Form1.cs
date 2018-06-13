@@ -256,5 +256,10 @@ namespace GUIFrontEnd
         {
 
         }
+
+        private void OutputBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
