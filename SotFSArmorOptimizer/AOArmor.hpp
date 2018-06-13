@@ -22,7 +22,7 @@ struct Armor
   std::array<size_t, Stats::STATS_COUNT> requirements;
 
   bool meetsRequirements(std::array<int, Stats::STATS_COUNT> const& stats) const;
-
+  size_t getStat(DefenseType stat, Defenses const& stats = getNoDefense()) const;
 };
 
 struct ArmorSet

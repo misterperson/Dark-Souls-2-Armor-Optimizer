@@ -25,7 +25,13 @@ try
 {
   if (argc > 1 && strcmp(argv[1], "-terse") == 0)
   {
-    output_proc = true;
+    if (strcmp(argv[1], "-terse") == 0)
+      output_proc = true;
+    else if (strcmp(argv[1], "-idsonly") == 0)
+    {
+      output_id_for_cs == 0;
+      output_proc = true;
+    }
   }
 
   TextInput("Input.json");
@@ -230,6 +236,16 @@ static void AOStart(Parser && _parser, AOSettings && _settings)
       settings.AllowedGear[i] = parser.moveSlot(i);
       settings.AllowedGear[i].emplace_back(getDefault());
     }
+  }
+
+  for (auto && gearSlot : settings.AllowedGear)
+  {
+    std::sort(gearSlot.begin(), gearSlot.end(),
+      [&](Armor const& lhs, Armor const& rhs)
+      {
+        return lhs.getStat(optimizerfor, settings.baseDef) > rhs.getStat(optimizerfor, settings.baseDef);
+      }
+    );
   }
 
   if(!output_id_for_cs)

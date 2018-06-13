@@ -90,6 +90,16 @@ bool Armor::meetsRequirements(std::array<int, Stats::STATS_COUNT> const & stats)
   return true;
 }
 
+size_t Armor::getStat(DefenseType stat, Defenses const & stats) const
+{
+  if (stat == lowest_elemental)
+  {
+    return *std::min(defenses.cbegin() + magic, defenses.cbegin() + dark + 1);
+  }
+  else
+    return defenses[stat];
+}
+
 Armor const *const* ArmorSet::begin() const
 {
   return &head;

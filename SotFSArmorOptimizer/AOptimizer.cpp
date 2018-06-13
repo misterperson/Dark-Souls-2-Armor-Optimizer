@@ -3,6 +3,22 @@
 #include <future>
 #include "AOptimizer.hpp"
 
+static OptimalArmors const& getEmpty()
+{
+  static OptimalArmors armor;
+
+  static bool init = true;
+  if (init)
+  {
+    for (size_t i = 0; i != 10; ++i)
+      armor.emplace_back(false, ArmorSet{});
+    init = false;
+  }
+
+  return armor;
+}
+
+
 struct ThreadSettings
 {
   std::array < Constraint, DefenseType::DEFENSE_COUNT> constraints;
@@ -48,9 +64,8 @@ static void TryInsert(ArmorSet && set, AOSettings const& settings, OptimalArmors
       stat >
       begin->second.getStat(settings.optimizeFor, settings.baseDef))
     {
-      std::rotate(begin, end - 1, end);
-      begin->first = true;
-      begin->second = set;
+      optimal.emplace(begin, true, set);
+      optimal.pop_back();
       return;
     }
 
@@ -69,9 +84,8 @@ static void ThreadTryInsert(ArmorSet && set, ThreadSettings const& settings, Opt
       stat >
       begin->second.getStat(settings.optimizeFor, settings.baseDef))
     {
-      std::rotate(begin, end - 1, end);
-      begin->first = true;
-      begin->second = set;
+      optimal.emplace(begin, true, set);
+      optimal.pop_back();
       return;
     }
 
@@ -114,18 +128,15 @@ static bool ThreadMeetsConstraints(ArmorSet const & set, ThreadSettings const& s
 }
 
 Optimizer::Optimizer(AOSettings const & _settings)
-  : settings{ _settings },
+  : settings{ _settings }, optimal{ getEmpty() },
   available{ settings.max_burden * settings.equipload - settings.build_weight }
 {
-  optimal.fill(std::make_pair(false, ArmorSet{}));
 }
 
 Optimizer::Optimizer(AOSettings && _settings)
-  : settings{ std::move(_settings) },
+  : settings{ std::move(_settings) }, optimal{ getEmpty() },
   available{ settings.max_burden * settings.equipload - settings.build_weight }
 {
-  optimal.fill(std::make_pair(false, ArmorSet{}));
-
 }
 
 bool Optimizer::Optimize()
@@ -195,7 +206,8 @@ bool Optimizer::Optimize()
 
   auto && findBest = [&globalSettings = _settings](ThreadSettings & settings, float available, std::promise<OptimalArmors> promise)
   {
-    OptimalArmors sets;
+    OptimalArmors sets = getEmpty();
+
     ArmorSet currentSet;
     for (auto && headgear : settings.allowed_ids[0])
       for (auto && chestpiece : settings.allowed_ids[1])
@@ -252,7 +264,7 @@ bool Optimizer::Optimize()
   }
 
 
-  return optimal[0].first;
+  return optimal.front().first;
 }
 
 OptimalArmors const & Optimizer::getArmor() const

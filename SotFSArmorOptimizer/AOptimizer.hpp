@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <array>
+#include <list>
 #include "AOArmor.hpp"
 
 struct Armor;
@@ -34,7 +35,7 @@ struct AOSettings
 
 // maybe replace with dynarray and allow end-user to configure
 // valid armor set + armor set
-typedef std::array<std::pair<bool, ArmorSet>, 10u> OptimalArmors;
+typedef std::list<std::pair<bool, ArmorSet>> OptimalArmors;
 class Optimizer
 {
 private:
