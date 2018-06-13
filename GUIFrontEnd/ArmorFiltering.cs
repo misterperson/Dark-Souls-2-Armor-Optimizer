@@ -67,6 +67,9 @@ namespace GUIFrontEnd
             arms = new CheckBox[settings.arms.Length];
             legs = new CheckBox[settings.legs.Length];
 
+            int width = CheckPanel.Width;
+            int vertSpace = 20;
+            Font font = new Font("Microsoft Sans Serif", 8.25F);
             for (int i = 0; i < head.Length; ++i)
             {
                 head[i] = new CheckBox
@@ -74,7 +77,10 @@ namespace GUIFrontEnd
                     Checked = settings.head[i],
                     Visible = true,
                     Parent = CheckPanel,
-                    Location = new Point(16, i * 20)
+                    Location = new Point(16, i * vertSpace),
+                    Text = ScholarArmorOptimizer.loader.head.Gear[i + 1].Name,
+                    Font = font,
+                    Size = new Size(width/4 - 40, vertSpace - 3)
                 };
             }
 
@@ -85,7 +91,10 @@ namespace GUIFrontEnd
                     Checked = settings.body[i],
                     Visible = true,
                     Parent = CheckPanel,
-                    Location = new Point(16 + 200, i * 20)
+                    Location = new Point(16 + width / 4, i * vertSpace),
+                    Text = ScholarArmorOptimizer.loader.body.Gear[i + 1].Name,
+                    Font = font,
+                    Size = new Size(width/4 - 40, vertSpace - 3)
                 };
             }
 
@@ -96,7 +105,10 @@ namespace GUIFrontEnd
                     Checked = settings.arms[i],
                     Visible = true,
                     Parent = CheckPanel,
-                    Location = new Point(16 + 400, i * 20)
+                    Location = new Point(16 + width / 2, i * vertSpace),
+                    Text = ScholarArmorOptimizer.loader.arms.Gear[i + 1].Name,
+                    Font = font,
+                    Size = new Size(width/4 - 40, vertSpace - 3)
                 };
             }
 
@@ -107,9 +119,64 @@ namespace GUIFrontEnd
                     Checked = settings.legs[i],
                     Visible = true,
                     Parent = CheckPanel,
-                    Location = new Point(16 + 600, i * 20)
+                    Location = new Point(16 + 3 * width / 4, i * vertSpace),
+                    Text = ScholarArmorOptimizer.loader.legs.Gear[i + 1].Name,
+                    Font = font,
+                    Size = new Size(width/4 - 40, vertSpace - 3)
                 };
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < head.Length; ++i)
+            {
+                head[i].Checked = false;
+            }
+            for (int i = 0; i < body.Length; ++i)
+            {
+                body[i].Checked = false;
+            }
+            for (int i = 0; i < arms.Length; ++i)
+            {
+                arms[i].Checked = false;
+            }
+            for (int i = 0; i < legs.Length; ++i)
+            {
+                legs[i].Checked = false;
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < head.Length; ++i)
+            {
+                head[i].Checked = true;
+            }
+            for (int i = 0; i < body.Length; ++i)
+            {
+                body[i].Checked = true;
+            }
+            for (int i = 0; i < arms.Length; ++i)
+            {
+                arms[i].Checked = true;
+            }
+            for (int i = 0; i < legs.Length; ++i)
+            {
+                legs[i].Checked = true;
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            // doesn't update main window
+            Close();
         }
     }
 

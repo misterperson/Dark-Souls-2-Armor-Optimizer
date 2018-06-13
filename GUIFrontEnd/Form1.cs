@@ -15,8 +15,8 @@ namespace GUIFrontEnd
     public partial class ScholarArmorOptimizer : Form
     {
         public static ArmorSettings armorSettings { get; set; } 
+        public static Loader loader = new Loader();
         string outputBuf = "";
-        Loader loader = new Loader();
         public ScholarArmorOptimizer()
         {
             InitializeComponent();
@@ -57,10 +57,10 @@ namespace GUIFrontEnd
 
             armorSettings = new ArmorSettings()
             {
-                head = new bool[loader.head.Gear.Count],
-                body = new bool[loader.body.Gear.Count],
-                arms = new bool[loader.arms.Gear.Count],
-                legs = new bool[loader.legs.Gear.Count]
+                head = new bool[loader.head.Gear.Count - 1],
+                body = new bool[loader.body.Gear.Count - 1],
+                arms = new bool[loader.arms.Gear.Count - 1],
+                legs = new bool[loader.legs.Gear.Count - 1]
             };
 
             resetArmor();
@@ -109,7 +109,6 @@ namespace GUIFrontEnd
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
         }
-
        
         public delegate void Textupdater();
         private void button1_Click(object sender, EventArgs e)
@@ -191,17 +190,84 @@ namespace GUIFrontEnd
             {
                 writer.settings.Forced_Equipment.Head = new UInt32[] { head.ItemID };
             }
+            else
+            {
+                List<UInt32> allowed = new List<UInt32>();
+                int i = 0;
+                foreach (var gear in armorSettings.head)
+                {
+                    if (gear) allowed.Insert(0, loader.head.Gear[i + 1].ItemID);
+                    i++;
+                }
+
+                if (allowed.Count == 0)
+                {
+                    allowed.Insert(0, 9999);
+                }
+                writer.settings.Forced_Equipment.Head = allowed.ToArray();
+            }
+
             if (body.ItemID != Armor.NoArmor)
             {
                 writer.settings.Forced_Equipment.Body = new UInt32[] { body.ItemID };
             }
+            else
+            {
+                List<UInt32> allowed = new List<UInt32>();
+                int i = 0;
+                foreach (var gear in armorSettings.body)
+                {
+                    if (gear) allowed.Insert(0, loader.body.Gear[i + 1].ItemID);
+                    i++;
+                }
+
+                if (allowed.Count == 0)
+                {
+                    allowed.Insert(0, 9999);
+                }
+                writer.settings.Forced_Equipment.Body = allowed.ToArray();
+            }
+
             if (arms.ItemID != Armor.NoArmor)
             {
                 writer.settings.Forced_Equipment.Arms = new UInt32[] { arms.ItemID };
             }
+            else
+            {
+                List<UInt32> allowed = new List<UInt32>();
+                int i = 0;
+                foreach (var gear in armorSettings.arms)
+                {
+                    if (gear) allowed.Insert(0, loader.arms.Gear[i + 1].ItemID);
+                    i++;
+                }
+
+                if (allowed.Count == 0)
+                {
+                    allowed.Insert(0, 9999);
+                }
+                writer.settings.Forced_Equipment.Arms = allowed.ToArray();
+            }
+
             if (legs.ItemID != Armor.NoArmor)
             {
                 writer.settings.Forced_Equipment.Legs = new UInt32[] { legs.ItemID };
+            }
+            else
+            {
+                List<UInt32> allowed = new List<UInt32>();
+                int i = 0;
+                foreach (var gear in armorSettings.legs)
+                {
+                    if (gear) allowed.Insert(0, loader.legs.Gear[i + 1].ItemID);
+                    i++;
+                }
+
+                if(allowed.Count == 0)
+                {
+                    allowed.Insert(0, 9999);
+                }
+                writer.settings.Forced_Equipment.Legs = allowed.ToArray();
             }
 
             writer.WriteOut();

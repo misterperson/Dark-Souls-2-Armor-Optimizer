@@ -29,7 +29,7 @@ try
       output_proc = true;
     else if (strcmp(argv[1], "-idsonly") == 0)
     {
-      output_id_for_cs == 0;
+      output_id_for_cs = true;
       output_proc = true;
     }
   }
@@ -129,11 +129,18 @@ try
           settings.AllowedGear[i].reserve(gear.GetArray().Size());
           for (auto && id : gear.GetArray())
           {
-            size_t offset = id.Get<size_t>() % 1000; // about 100 armor in each slot give or take, though
+            if (id == 9999)
+            {
+              settings.AllowedGear[i].emplace_back(getDefault());
+            }
+            else
+            {
+              size_t offset = id.Get<size_t>() % 1000; // about 100 armor in each slot give or take, though
 
-            if (offset > parser.getSlot(i).size()) continue;
+              if (offset > parser.getSlot(i).size()) continue;
 
-            settings.AllowedGear[i].emplace_back(parser.getSlot(i)[offset]);
+              settings.AllowedGear[i].emplace_back(parser.getSlot(i)[offset]);
+            }
           }
         }
       }
