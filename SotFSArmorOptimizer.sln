@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ArmorOptimizer", "SotFSArmorOptimizer\SotFSArmorOptimizer.vcxproj", "{B058FCA2-D9F8-4DB1-A06D-4D70FE24B0E7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUIFrontEnd", "GUIFrontEnd\GUIFrontEnd.csproj", "{C883B243-D4A9-41D1-8136-8DA0F2AA57C9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B058FCA2-D9F8-4DB1-A06D-4D70FE24B0E7} = {B058FCA2-D9F8-4DB1-A06D-4D70FE24B0E7}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

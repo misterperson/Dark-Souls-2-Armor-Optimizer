@@ -1,0 +1,64 @@
+{
+
+  "Max Burden":           59.5,
+  "Weight Without Armor":  8.7,
+  "Target Equipload":     0.55,
+  
+  "Stats":
+  {
+    "Strength":       16,
+    "Dexterity":      6,
+    "Intelligence":    5,
+    "Faith":          5,
+    
+    "Poise":           7,
+    
+    "Physical":       40,
+    "Strike":         40,
+    "Slash":          40,
+    "Thrust":         40,
+    
+    "Magic":          30,
+    "Fire":           30,
+    "Dark":           30,
+    "Lightning":      30,
+    
+    "Poison":        143,
+    "Bleed":         143,
+    "Petrification": 152,
+    "Curse":         142
+  },
+  
+  "Forced Equipment":
+  {
+    "Leave arrays blank for anything": 1,
+    "Head":[],
+    "Body":[],
+    "Arms":[],
+    "Legs":[]
+  },
+  
+  
+  "Constraints":
+  {
+
+    "Poise":         [  53, 99999 ],
+
+    "Physical":      [   0, 99999 ],
+    "Strike":        [   0, 99999 ],
+    "Slash":         [   0, 99999 ],
+    "Thrust":        [   0, 99999 ],
+
+    "Magic":         [   0, 99999 ],
+    "Fire":          [   0, 99999 ],
+    "Dark":          [   0, 99999 ],
+    "Lightning":     [   0, 99999 ],
+
+    "Poison":        [   0, 99999 ],
+    "Bleed":         [   0, 99999 ],
+    "Petrification": [   0, 99999 ],
+    "Curse":         [   0, 99999 ]
+  },
+  
+  "Optimize For": 13
+}

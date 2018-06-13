@@ -78,6 +78,7 @@
             this.label23 = new System.Windows.Forms.Label();
             this.OptimizeFor = new System.Windows.Forms.ComboBox();
             this.label24 = new System.Windows.Forms.Label();
+            this.ArmorFilter = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PhysDef)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MagicDef)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FireDef)).BeginInit();
@@ -665,7 +666,7 @@
             this.label20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(62)))));
             this.label20.Font = new System.Drawing.Font("OptimusPrincepsSemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(353, 355);
+            this.label20.Location = new System.Drawing.Point(354, 399);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(107, 17);
             this.label20.TabIndex = 42;
@@ -678,7 +679,7 @@
             this.label21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(62)))));
             this.label21.Font = new System.Drawing.Font("OptimusPrincepsSemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(191, 354);
+            this.label21.Location = new System.Drawing.Point(192, 398);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(106, 17);
             this.label21.TabIndex = 41;
@@ -691,7 +692,7 @@
             this.label22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(62)))));
             this.label22.Font = new System.Drawing.Font("OptimusPrincepsSemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(5, 354);
+            this.label22.Location = new System.Drawing.Point(6, 398);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(130, 17);
             this.label22.TabIndex = 40;
@@ -700,7 +701,7 @@
             // 
             // GearWeight
             // 
-            this.GearWeight.Location = new System.Drawing.Point(303, 351);
+            this.GearWeight.Location = new System.Drawing.Point(304, 395);
             this.GearWeight.MaxLength = 5;
             this.GearWeight.Name = "GearWeight";
             this.GearWeight.Size = new System.Drawing.Size(41, 20);
@@ -709,7 +710,7 @@
             // 
             // MaxEquipLoad
             // 
-            this.MaxEquipLoad.Location = new System.Drawing.Point(144, 351);
+            this.MaxEquipLoad.Location = new System.Drawing.Point(145, 395);
             this.MaxEquipLoad.MaxLength = 5;
             this.MaxEquipLoad.Name = "MaxEquipLoad";
             this.MaxEquipLoad.Size = new System.Drawing.Size(41, 20);
@@ -718,7 +719,7 @@
             // 
             // RollBox
             // 
-            this.RollBox.Location = new System.Drawing.Point(466, 351);
+            this.RollBox.Location = new System.Drawing.Point(467, 395);
             this.RollBox.Name = "RollBox";
             this.RollBox.Size = new System.Drawing.Size(41, 20);
             this.RollBox.TabIndex = 21;
@@ -730,7 +731,7 @@
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label23.Location = new System.Drawing.Point(504, 348);
+            this.label23.Location = new System.Drawing.Point(505, 392);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(26, 24);
             this.label23.TabIndex = 46;
@@ -757,12 +758,23 @@
             this.label24.Text = "Optimize";
             this.label24.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // ArmorFilter
+            // 
+            this.ArmorFilter.Location = new System.Drawing.Point(203, 343);
+            this.ArmorFilter.Name = "ArmorFilter";
+            this.ArmorFilter.Size = new System.Drawing.Size(156, 25);
+            this.ArmorFilter.TabIndex = 49;
+            this.ArmorFilter.TabStop = false;
+            this.ArmorFilter.Text = "Filter Armors";
+            this.ArmorFilter.UseVisualStyleBackColor = true;
+            // 
             // ScholarArmorOptimizer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(62)))));
             this.ClientSize = new System.Drawing.Size(740, 428);
+            this.Controls.Add(this.ArmorFilter);
             this.Controls.Add(this.label24);
             this.Controls.Add(this.OptimizeFor);
             this.Controls.Add(this.label23);
@@ -892,6 +904,7 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.ComboBox OptimizeFor;
         private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Button ArmorFilter;
     }
 }
 
