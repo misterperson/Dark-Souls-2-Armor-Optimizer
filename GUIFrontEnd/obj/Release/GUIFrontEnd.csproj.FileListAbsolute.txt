@@ -1,0 +1,13 @@
+C:\Users\patbe_000\source\repos\SotFSArmorOptimizer\GUIFrontEnd\bin\Release\GUIFrontEnd.exe.config
+C:\Users\patbe_000\source\repos\SotFSArmorOptimizer\GUIFrontEnd\bin\Release\GUIFrontEnd.exe
+C:\Users\patbe_000\source\repos\SotFSArmorOptimizer\GUIFrontEnd\bin\Release\GUIFrontEnd.pdb
+C:\Users\patbe_000\source\repos\SotFSArmorOptimizer\GUIFrontEnd\obj\Release\GUIFrontEnd.csprojAssemblyReference.cache
+C:\Users\patbe_000\source\repos\SotFSArmorOptimizer\GUIFrontEnd\obj\Release\GUIFrontEnd.Properties.Resources.resources
+C:\Users\patbe_000\source\repos\SotFSArmorOptimizer\GUIFrontEnd\obj\Release\GUIFrontEnd.csproj.GenerateResource.cache
+C:\Users\patbe_000\source\repos\SotFSArmorOptimizer\GUIFrontEnd\obj\Release\GUIFrontEnd.csproj.CoreCompileInputs.cache
+C:\Users\patbe_000\source\repos\SotFSArmorOptimizer\GUIFrontEnd\obj\Release\GUIFrontEnd.exe
+C:\Users\patbe_000\source\repos\SotFSArmorOptimizer\GUIFrontEnd\obj\Release\GUIFrontEnd.pdb
+C:\Users\patbe_000\source\repos\SotFSArmorOptimizer\GUIFrontEnd\bin\Release\Newtonsoft.Json.dll
+C:\Users\patbe_000\source\repos\SotFSArmorOptimizer\GUIFrontEnd\bin\Release\Newtonsoft.Json.xml
+C:\Users\patbe_000\source\repos\SotFSArmorOptimizer\GUIFrontEnd\obj\Release\GUIFrontEnd.csproj.CopyComplete
+C:\Users\patbe_000\source\repos\SotFSArmorOptimizer\GUIFrontEnd\obj\Release\GUIFrontEnd.ScholarArmorOptimizer.resources

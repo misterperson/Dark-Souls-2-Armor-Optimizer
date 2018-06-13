@@ -1,0 +1,440 @@
+Head:
+       Alonne Captain Helm+10 -    0
+        Alonne Knight Helm+10 -    1
+              Alonne's Helm+5 -    2
+                 Alva Helm+10 -    3
+            Archdrake Helm+10 -    4
+        Bell Keeper Helmet+10 -    5
+     Benhart's Knight Helm+10 -    6
+            Black Dragon Helm -    7
+    Black Hollow Mage Hood+10 -    8
+                 Black Hood+5 -    9
+    Black Witch Domino Mask+5 -   10
+            Black Witch Hat+5 -   11
+           Black Witch Veil+5 -   12
+                 Bone Crown+5 -   13
+              Brigand Hood+10 -   14
+               Cale's Helm+10 -   15
+              Catarina Helm+5 -   16
+                 Chaos Hood+5 -   17
+         Charred Loyce Helm+5 -   18
+    Creighton's Steel Mask+10 -   19
+    Crown of the Ivory King+5 -   20
+ Crown of the Old Iron King+5 -   21
+   Crown of the Sunken King+5 -   22
+                  Dark Mask+5 -   23
+     Desert Sorceress Hood+10 -   24
+                Dingy Hood+10 -   25
+       Dragon Acolyte Mask+10 -   26
+          Dragon Sage Hood+10 -   27
+           Dragonrider Helm+5 -   28
+           Drakeblood Helm+10 -   29
+          Drakekeeper Helm+10 -   30
+             Drangleic Helm+5 -   31
+                Durgo's Hat+5 -   32
+         Elite Knight Helm+10 -   33
+           Executioner Helm+5 -   34
+             Falconer Helm+10 -   35
+               Faraam Helm+10 -   36
+        Fume Sorcerer Mask+10 -   37
+         Grave Warden Mask+10 -   38
+                 Gyrm Helm+10 -   39
+    Gyrm Warrior Greathelm+10 -   40
+         Gyrm Warrior Helm+10 -   41
+               Havel's Helm+5 -   42
+    Heide Knight Greathelm+10 -   43
+    Heide Knight Iron Mask+10 -   44
+             Helm of Aurous+5 -   45
+         Helm of Aurous (T)+5 -   46
+               Hexer's Hood+5 -   47
+      Hollow Infantry Helm+10 -   48
+               Hollow Skin+10 -   49
+       Hood of the Forlorn+10 -   50
+              Hunter's Hat+10 -   51
+            Imperious Helm+10 -   52
+             Imported Hood+10 -   53
+             Infantry Helm+10 -   54
+             Insolent Helm+10 -   55
+             Ironclad Helm+10 -   56
+           Ivory King Helm+5  -   57
+              Jester's Cap+10 -   58
+               King's Crown+5 -   59
+               Knight Helm+10 -   60
+          Leydia Black Hood+5 -   61
+         Leydia White Hood+10 -   62
+         Lion Warrior Helm+10 -   63
+         Looking Glass Mask+5 -   64
+                 Loyce Helm+5 -   65
+           Lucatiel's Mask+10 -   66
+           Mad Warrior Mask+5 -   67
+              Manikin Mask+10 -   68
+           Mask of Judgment+5 -   69
+             Mastodon Helm+10 -   70
+             Minotaur Helm+10 -   71
+                Mirrah Hat+10 -   72
+        Monastery Headcloth+5 -   73
+         Moon Butterfly Hat+5 -   74
+                  Moon Hat+10 -   75
+            Nahr Alma Hood+10 -   76
+          Northwarder Hood+10 -   77
+             Old Bell Helm+10 -   78
+         Old Ironclad Helm+10 -   79
+           Old Knight Helm+10 -   80
+               Pate's Helm+10 -   81
+               Peasant Hat+10 -   82
+                 Penal Mask+5 -   83
+              Pharros Mask+10 -   84
+       Priestess Headpiece+10 -   85
+           Prisoner's Hood+10 -   86
+               Raime's Helm+5 -   87
+         Rampart Golem Helm+5 -   88
+                Rogue Hood+10 -   89
+        Royal Soldier Helm+10 -   90
+      Royal Swordsman Helm+10 -   91
+                  Ruin Helm+5 -   92
+      Rusted Mastodon Helm+10 -   93
+               Saint's Hood+5 -   94
+        Sanctum Knight Helm+5 -   95
+   Sanctum Priestess Tiara+10 -   96
+               Shadow Mask+10 -   97
+         Smelter Demon Helm+5 -   98
+        Spiked Bandit Helm+10 -   99
+             Standard Helm+10 -  100
+                Steel Helm+10 -  101
+               Syan's Helm+10 -  102
+         Symbol of Avarice+10 -  103
+            Targray's Helm+10 -  104
+       Tattered Cloth Hood+10 -  105
+                Thief Mask+10 -  106
+       Throne Defender Helm+5 -  107
+        Throne Watcher Helm+5 -  108
+    Traveling Merchant Hat+10 -  109
+              Tseldora Cap+10 -  110
+            Varangian Helm+10 -  111
+            Velstadt's Helm+5 -  112
+             Vengarl's Helm+5 -  113
+             Wanderer Hood+10 -  114
+              Warlock Mask+10 -  115
+    White Hollow Mage Hood+10 -  116
+    White Priest Headpiece+10 -  117
+             Xanthous Crown+5 -  118
+
+Body:
+       Agdayne's Black Robe+5 - 1000
+      Alonne Captain Armor+10 - 1001
+       Alonne Knight Armor+10 - 1002
+             Alonne's Armor+5 - 1003
+                Alva Armor+10 - 1004
+           Archdrake Robes+10 - 1005
+            Armor of Aurous+5 - 1006
+        Armor of Aurous (T)+5 - 1007
+        Astrologist's Robe+10 - 1008
+              Bandit Armor+10 - 1009
+     Bell Keeper Bellyband+10 - 1010
+           Benhart's Armor+10 - 1011
+           Black Dragon Armor - 1012
+    Black Hollow Mage Robe+10 - 1013
+       Black Leather Armor+10 - 1014
+                Black Robes+5 - 1015
+           Black Witch Robe+5 - 1016
+             Bone King Robe+5 - 1017
+             Brigand Armor+10 - 1018
+      Cale's Leather Armor+10 - 1019
+             Catarina Armor+5 - 1020
+                 Chaos Robe+5 - 1021
+        Charred Loyce Armor+5 - 1022
+     Creighton's Chainmail+10 - 1023
+                 Dark Armor+5 - 1024
+      Desert Sorceress Top+10 - 1025
+                Dingy Robe+10 - 1026
+       Dragon Acolyte Robe+10 - 1027
+          Dragonrider Armor+5 - 1028
+          Drakeblood Armor+10 - 1029
+         Drakekeeper Armor+10 - 1030
+             Drangleic Mail+5 - 1031
+        Elite Knight Armor+10 - 1032
+          Executioner Armor+5 - 1033
+            Falconer Armor+10 - 1034
+              Faraam Armor+10 - 1035
+             Forlorn Armor+10 - 1036
+       Fume Sorcerer Robes+10 - 1037
+          Grave Warden Top+10 - 1038
+                Gyrm Armor+10 - 1039
+        Gyrm Warrior Armor+10 - 1040
+        Hard Leather Armor+10 - 1041
+              Havel's Armor+5 - 1042
+    Heide Knight Chainmail+10 - 1043
+              Hexer's Robes+5 - 1044
+     Hollow Infantry Armor+10 - 1045
+      Hollow Soldier Armor+10 - 1046
+           Imperious Armor+10 - 1047
+            Imported Tunic+10 - 1048
+            Infantry Armor+10 - 1049
+            Insolent Armor+10 - 1050
+            Ironclad Armor+10 - 1051
+          Ivory King Armor+5  - 1052
+            Jester's Robes+10 - 1053
+               King's Armor+5 - 1054
+              Knight Armor+10 - 1055
+             Leather Armor+10 - 1056
+          Leydia Black Robe+5 - 1057
+          Leydia White Robe+5 - 1058
+            Lion Mage Robe+10 - 1059
+         Lion Warrior Cape+10 - 1060
+            Llewellyn Armor+5 - 1061
+        Looking Glass Armor+5 - 1062
+                Loyce Armor+5 - 1063
+           Lucatiel's Vest+10 - 1064
+          Mad Warrior Armor+5 - 1065
+               Manikin Top+10 - 1066
+            Mastodon Armor+10 - 1067
+        Monastery Longshirt+5 - 1068
+       Moon Butterfly Wings+5 - 1069
+           Nahr Alma Robes+10 - 1070
+          Northwarder Robe+10 - 1071
+        Old Ironclad Armor+10 - 1072
+          Old Knight Armor+10 - 1073
+              Pate's Armor+10 - 1074
+            Peasant Attire+10 - 1075
+       Penal Straightjacket+5 - 1076
+            Priestess Robe+10 - 1077
+        Prisoner's Tatters+10 - 1078
+              Raime's Armor+5 - 1079
+        Rampart Golem Armor+5 - 1080
+     Red Lion Warrior Cape+10 - 1081
+             Retainer Robe+10 - 1082
+           Robe of Judgment+5 - 1083
+               Rogue Armor+10 - 1084
+       Royal Soldier Armor+10 - 1085
+     Royal Swordsman Armor+10 - 1086
+                 Ruin Armor+5 - 1087
+     Rusted Mastodon Armor+10 - 1088
+              Saint's Dress+5 - 1089
+       Sanctum Knight Armor+5 - 1090
+                Shadow Top+10 - 1091
+             Singer's Dress+5 - 1092
+        Smelter Demon Armor+5 - 1093
+               Steel Armor+10 - 1094
+              Syan's Armor+10 - 1095
+           Targray's Armor+10 - 1096
+       Tattered Cloth Robe+10 - 1097
+      Throne Defender Armor+5 - 1098
+       Throne Watcher Armor+5 - 1099
+   Traveling Merchant Coat+10 - 1100
+             Tseldora Robe+10 - 1101
+           Varangian Armor+10 - 1102
+           Velstadt's Armor+5 - 1103
+            Vengarl's Armor+5 - 1104
+             Wanderer Coat+10 - 1105
+    White Hollow Mage Robe+10 - 1106
+         White Priest Robe+10 - 1107
+          Xanthous Overcoat+5 - 1108
+
+Arms:
+            Agdayne's Cuffs+5 - 2000
+   Alonne Knight Gauntlets+10 - 2001
+         Alonne's Gauntlets+5 - 2002
+            Alva Gauntlets+10 - 2003
+          Archdrake Gloves+10 - 2004
+   Astrologist's Gauntlets+10 - 2005
+          Bandit Gauntlets+10 - 2006
+         Bell Keeper Cuffs+10 - 2007
+       Benhart's Gauntlets+10 - 2008
+       Black Dragon Gauntlets - 2009
+               Black Gloves+5 - 2010
+      Black Leather Gloves+10 - 2011
+         Black Witch Gloves+5 - 2012
+            Bone King Cuffs+5 - 2013
+         Brigand Gauntlets+10 - 2014
+         Catarina Gauntlets+5 - 2015
+               Chaos Gloves+5 - 2016
+    Charred Loyce Gauntlets+5 - 2017
+  Creighton's Chain Gloves+10 - 2018
+             Dark Gauntlets+5 - 2019
+   Desert Sorceress Gloves+10 - 2020
+               Dingy Cuffs+10 - 2021
+     Dragon Acolyte Gloves+10 - 2022
+      Dragonrider Gauntlets+5 - 2023
+      Drakeblood Gauntlets+10 - 2024
+     Drakekeeper Gauntlets+10 - 2025
+        Drangleic Gauntlets+5 - 2026
+       Elite Knight Gloves+10 - 2027
+         Engraved Gauntlets+5 - 2028
+      Executioner Gauntlets+5 - 2029
+           Falconer Gloves+10 - 2030
+          Faraam Gauntlets+10 - 2031
+      Fume Sorcerer Gloves+10 - 2032
+        Gauntlets of Aurous+5 - 2033
+    Gauntlets of Aurous (T)+5 - 2034
+   Gauntlets of the Forlorn+5 - 2035
+        Grave Warden Cuffs+10 - 2036
+               Gyrm Gloves+10 - 2037
+       Gyrm Warrior Gloves+10 - 2038
+    Hard Leather Gauntlets+10 - 2039
+          Havel's Gauntlets+5 - 2040
+    Heide Knight Gauntlets+10 - 2041
+             Hexer's Gloves+5 - 2042
+    Hollow Infantry Gloves+10 - 2043
+  Hollow Soldier Gauntlets+10 - 2044
+          Imperious Gloves+10 - 2045
+       Imported Manchettes+10 - 2046
+           Infantry Gloves+10 - 2047
+           Insolent Gloves+10 - 2048
+        Ironclad Gauntlets+10 - 2049
+       Ivory King Gauntlets+5 - 2050
+           Jester's Gloves+10 - 2051
+           King's Gauntlets+5 - 2052
+          Knight Gauntlets+10 - 2053
+            Leather Gloves+10 - 2054
+          Leydia Gauntlets+10 - 2055
+           Lion Mage Cuffs+10 - 2056
+        Lion Warrior Cuffs+10 - 2057
+           Llewellyn Gloves+5 - 2058
+    Looking Glass Gauntlets+5 - 2059
+            Loyce Gauntlets+5 - 2060
+         Lucatiel's Gloves+10 - 2061
+      Mad Warrior Gauntlets+5 - 2062
+     Manchettes of Judgment+5 - 2063
+            Manikin Gloves+10 - 2064
+        Mastodon Gauntlets+10 - 2065
+      Monastery Long Gloves+5 - 2066
+       Moon Butterfly Cuffs+5 - 2067
+    Northwarder Manchettes+10 - 2068
+    Old Ironclad Gauntlets+10 - 2069
+      Old Knight Gauntlets+10 - 2070
+             Pate's Gloves+10 - 2071
+       Peasant Long Gloves+10 - 2072
+            Penal Handcuffs+5 - 2073
+          Priestess Gloves+10 - 2074
+         Prisoner's Gloves+10 - 2075
+          Raime's Gauntlets+5 - 2076
+    Rampart Golem Gauntlets+5 - 2077
+           Rogue Gauntlets+10 - 2078
+   Royal Soldier Gauntlets+10 - 2079
+    Royal Swordsman Gloves+10 - 2080
+             Ruin Gauntlets+5 - 2081
+ Rusted Mastodon Gauntlets+10 - 2082
+        Saint's Long Gloves+5 - 2083
+   Sanctum Knight Gauntlets+5 - 2084
+  Sanctum Soldier Gauntlet+10 - 2085
+          Shadow Gauntlets+10 - 2086
+    Smelter Demon Gauntlets+5 - 2087
+           Steel Gauntlets+10 - 2088
+          Syan's Gauntlets+10 - 2089
+        Targray's Manifers+10 - 2090
+ Tattered Cloth Manchettes+10 - 2091
+  Throne Defender Gauntlets+5 - 2092
+   Throne Watcher Gauntlets+5 - 2093
+ Traveling Merchant Gloves+10 - 2094
+       Tseldora Manchettes+10 - 2095
+           Varangian Cuffs+10 - 2096
+       Velstadt's Gauntlets+5 - 2097
+           Vengarl's Gloves+5 - 2098
+        Wanderer Manchette+10 - 2099
+       White Priest Gloves+10 - 2100
+            Xanthous Gloves+5 - 2101
+
+Legs:
+             Agdayne's Kilt+5 - 3000
+    Alonne Knight Leggings+10 - 3001
+          Alonne's Leggings+5 - 3002
+             Alva Leggings+10 - 3003
+           Archdrake Boots+10 - 3004
+     Astrologist's Bottoms+10 - 3005
+              Bandit Boots+10 - 3006
+      Bell Keeper Trousers+10 - 3007
+           Benhart's Boots+10 - 3008
+                Black Boots+5 - 3009
+        Black Dragon Leggings - 3010
+       Black Leather Boots+10 - 3011
+       Black Witch Trousers+5 - 3012
+       Blood-Stained Skirt+10 - 3013
+            Bone King Skirt+5 - 3014
+          Brigand Trousers+10 - 3015
+              Cale's Shoes+10 - 3016
+          Catarina Leggings+5 - 3017
+                Chaos Boots+5 - 3018
+     Charred Loyce Leggings+5 - 3019
+Creighton's Chain Leggings+10 - 3020
+              Dark Leggings+5 - 3021
+    Desert Sorceress Skirt+10 - 3022
+      Dragon Acolyte Boots+10 - 3023
+       Dragonrider Leggings+5 - 3024
+       Drakeblood Leggings+10 - 3025
+         Drakekeeper Boots+10 - 3026
+         Drangleic Leggings+5 - 3027
+     Elite Knight Leggings+10 - 3028
+       Executioner Leggings+5 - 3029
+            Falconer Boots+10 - 3030
+              Faraam Boots+10 - 3031
+              Flower Skirt+10 - 3032
+        Flying Feline Boots+5 - 3033
+       Fume Sorcerer Boots+10 - 3034
+      Grave Warden Bottoms+10 - 3035
+                Gyrm Boots+10 - 3036
+        Gyrm Warrior Boots+10 - 3037
+        Hard Leather Boots+10 - 3038
+           Havel's Leggings+5 - 3039
+               Heavy Boots+10 - 3040
+     Heide Knight Leggings+10 - 3041
+              Hexer's Boots+5 - 3042
+     Hollow Infantry Boots+10 - 3043
+   Hollow Soldier Leggings+10 - 3044
+        Imperious Leggings+10 - 3045
+         Imported Trousers+10 - 3046
+            Infantry Boots+10 - 3047
+            Insolent Boots+10 - 3048
+         Ironclad Leggings+10 - 3049
+        Ivory King Leggings+5 - 3050
+           Jester's Tights+10 - 3051
+            King's Leggings+5 - 3052
+           Knight Leggings+10 - 3053
+             Leather Boots+10 - 3054
+         Leggings of Aurous+5 - 3055
+     Leggings of Aurous (T)+5 - 3056
+    Leggings of the Forlorn+5 - 3057
+           Lion Mage Skirt+10 - 3058
+        Lion Warrior Skirt+10 - 3059
+            Llewellyn Shoes+5 - 3060
+     Looking Glass Leggings+5 - 3061
+             Loyce Leggings+5 - 3062
+       Lucatiel's Trousers+10 - 3063
+       Mad Warrior Leggings+5 - 3064
+             Manikin Boots+10 - 3065
+         Mastodon Leggings+10 - 3066
+            Monastery Skirt+5 - 3067
+      Moon Butterfly Skirt+10 - 3068
+      Northwarder Trousers+10 - 3069
+     Old Ironclad Leggings+10 - 3070
+       Old Knight Leggings+10 - 3071
+           Pate's Trousers+10 - 3072
+          Peasant Trousers+10 - 3073
+                Penal Skirt+5 - 3074
+           Priestess Skirt+10 - 3075
+     Prisoner's Waistcloth+10 - 3076
+           Raime's Leggings+5 - 3077
+     Rampart Golem Leggings+5 - 3078
+            Rogue Leggings+10 - 3079
+    Royal Soldier Leggings+10 - 3080
+  Royal Swordsman Leggings+10 - 3081
+              Ruin Leggings+5 - 3082
+  Rusted Mastodon Leggings+10 - 3083
+           Saint's Trousers+5 - 3084
+    Sanctum Knight Leggings+5 - 3085
+           Shadow Leggings+10 - 3086
+     Smelter Demon Leggings+5 - 3087
+            Steel Leggings+10 - 3088
+           Syan's Leggings+10 - 3089
+        Targray's Leggings+10 - 3090
+   Throne Defender Leggings+5 - 3091
+    Throne Watcher Leggings+5 - 3092
+         Tights of Judgment+5 - 3093
+  Traveling Merchant Boots+10 - 3094
+         Tseldora Trousers+10 - 3095
+        Varangian Leggings+10 - 3096
+        Velstadt's Leggings+5 - 3097
+            Vengarl's Boots+5 - 3098
+            Wanderer Boots+10 - 3099
+        White Priest Skirt+10 - 3100
+        Xanthous Waistcloth+5 - 3101
+
