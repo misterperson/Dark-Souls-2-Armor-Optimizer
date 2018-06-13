@@ -59,6 +59,7 @@
     <Compile Include="ArmorFiltering.Designer.cs">
       <DependentUpon>ArmorFiltering.cs</DependentUpon>
     </Compile>
+    <Compile Include="ArmorSettings.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

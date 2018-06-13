@@ -14,6 +14,7 @@ namespace GUIFrontEnd
 {
     public partial class ScholarArmorOptimizer : Form
     {
+        public static ArmorSettings armorSettings { get; set; } 
         string outputBuf = "";
         Loader loader = new Loader();
         public ScholarArmorOptimizer()
@@ -21,8 +22,22 @@ namespace GUIFrontEnd
             InitializeComponent();
         }
 
+        public void resetArmor()
+        {
+            for (int i = 0; i != armorSettings.head.Length; ++i)
+                armorSettings.head[i] = true;
+            for (int i = 0; i != armorSettings.body.Length; ++i)
+                armorSettings.body[i] = true;
+            for (int i = 0; i != armorSettings.arms.Length; ++i)
+                armorSettings.arms[i] = true;
+            for (int i = 0; i != armorSettings.legs.Length; ++i)
+                armorSettings.legs[i] = true;
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
+
+
             HeadRestriction.DataSource = loader.head.Gear;
             HeadRestriction.SelectedIndexChanged += HeadRestriction_SelectedIndexChanged;
 
@@ -38,6 +53,17 @@ namespace GUIFrontEnd
             GearWeight.KeyPress += Decimal_KeyPress;
             RollBox.KeyPress += Decimal_KeyPress;
             RollBox.Validating += RollBox_TextChanged;
+
+
+            armorSettings = new ArmorSettings()
+            {
+                head = new bool[loader.head.Gear.Count],
+                body = new bool[loader.body.Gear.Count],
+                arms = new bool[loader.arms.Gear.Count],
+                legs = new bool[loader.legs.Gear.Count]
+            };
+
+            resetArmor();
         }
 
         private void RollBox_TextChanged(object sender, CancelEventArgs e)
@@ -260,6 +286,12 @@ namespace GUIFrontEnd
         private void OutputBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void ArmorFilter_Click(object sender, EventArgs e)
+        {
+            ArmorFiltering form = new ArmorFiltering();
+            form.ShowDialog();
         }
     }
 }

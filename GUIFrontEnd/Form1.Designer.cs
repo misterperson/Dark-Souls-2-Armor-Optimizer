@@ -721,7 +721,7 @@
             this.GearWeight.Location = new System.Drawing.Point(312, 367);
             this.GearWeight.MaxLength = 5;
             this.GearWeight.Name = "GearWeight";
-            this.GearWeight.Size = new System.Drawing.Size(41, 20);
+            this.GearWeight.Size = new System.Drawing.Size(32, 20);
             this.GearWeight.TabIndex = 20;
             this.GearWeight.Text = "10.3";
             // 
@@ -730,15 +730,16 @@
             this.MaxEquipLoad.Location = new System.Drawing.Point(144, 367);
             this.MaxEquipLoad.MaxLength = 5;
             this.MaxEquipLoad.Name = "MaxEquipLoad";
-            this.MaxEquipLoad.Size = new System.Drawing.Size(41, 20);
+            this.MaxEquipLoad.Size = new System.Drawing.Size(40, 20);
             this.MaxEquipLoad.TabIndex = 19;
             this.MaxEquipLoad.Text = "110.7";
             // 
             // RollBox
             // 
             this.RollBox.Location = new System.Drawing.Point(480, 367);
+            this.RollBox.MaxLength = 5;
             this.RollBox.Name = "RollBox";
-            this.RollBox.Size = new System.Drawing.Size(41, 20);
+            this.RollBox.Size = new System.Drawing.Size(32, 20);
             this.RollBox.TabIndex = 21;
             this.RollBox.Text = "55.0";
             this.RollBox.TextChanged += new System.EventHandler(this.RollBox_TextChanged);
@@ -784,6 +785,7 @@
             this.ArmorFilter.TabStop = false;
             this.ArmorFilter.Text = "Filter Armors";
             this.ArmorFilter.UseVisualStyleBackColor = true;
+            this.ArmorFilter.Click += new System.EventHandler(this.ArmorFilter_Click);
             // 
             // panel1
             // 
