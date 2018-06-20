@@ -283,7 +283,7 @@ namespace GUIFrontEnd
                    UseWaitCursor = true;
                    ProcessStartInfo info = new ProcessStartInfo()
                    {
-                       Arguments = "-terse",
+                       Arguments = "-terse", // suppresses getc
                        FileName = "ArmorOptimizer.exe",
                        UseShellExecute = false,
                        RedirectStandardOutput = true,
@@ -360,6 +360,7 @@ namespace GUIFrontEnd
             form.ShowDialog();
         }
 
+        // STOP GENERATING CODE AAAAAAAAAAAAAAAAAAAAAAAAAAAA
         private void label9_Click(object sender, EventArgs e)
         {
 

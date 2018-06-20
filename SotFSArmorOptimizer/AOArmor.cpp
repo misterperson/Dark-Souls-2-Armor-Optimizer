@@ -94,7 +94,13 @@ size_t Armor::getStat(DefenseType stat, Defenses const & stats) const
 {
   if (stat == lowest_elemental)
   {
-    return *std::min(defenses.cbegin() + magic, defenses.cbegin() + dark + 1);
+    std::array<size_t, 4> elemental;
+    std::copy(stats.cbegin() + magic, stats.cbegin() + dark + 1, elemental.begin());
+    for (int i = 0; i < 4; ++i)
+    {
+      elemental[i] += stats[i + magic];
+    }
+    return *std::min(elemental.cbegin(), elemental.cend());
   }
   else
     return defenses[stat];

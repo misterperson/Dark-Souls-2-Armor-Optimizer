@@ -1,5 +1,6 @@
 #include <array>
 #include <thread>
+#include <numeric>
 #include <future>
 #include "AOptimizer.hpp"
 
@@ -11,7 +12,7 @@ static OptimalArmors const& getEmpty()
   if (init)
   {
     for (size_t i = 0; i != 10; ++i)
-      armor.emplace_back(false, ArmorSet{});
+      armor.emplace_back(false, ArmorSet{}, 0);
     init = false;
   }
 
@@ -43,28 +44,22 @@ struct ThreadSettings
 
     for (size_t i = 0; i != 4; ++i)
     {
-      int j = 0;
-      allowed_ids[i].reserve(settings.AllowedGear[i].size());
-      for (auto && gear : settings.AllowedGear[i])
-      {
-        allowed_ids[i].emplace_back(j++);
-      }
+      allowed_ids[i].resize(settings.AllowedGear[i].size());
+      std::iota(allowed_ids[i].begin(), allowed_ids[i].end(), size_t{ 0 });
     }
   }
 };
 
 static void TryInsert(ArmorSet && set, AOSettings const& settings, OptimalArmors & optimal)
 {
-  const size_t stat = set.getStat(settings.optimizeFor, settings.baseDef);
+  size_t stat = set.getStat(settings.optimizeFor, settings.baseDef);
   auto && begin = optimal.begin();
   auto && end = optimal.end();
   while (begin != end)
   {
-    if (!begin->first ||
-      stat >
-      begin->second.getStat(settings.optimizeFor, settings.baseDef))
+    if (!begin->first || stat > begin->third)
     {
-      optimal.emplace(begin, true, set);
+      optimal.emplace(begin, true, set, stat);
       optimal.pop_back();
       return;
     }
@@ -75,16 +70,14 @@ static void TryInsert(ArmorSet && set, AOSettings const& settings, OptimalArmors
 
 static void ThreadTryInsert(ArmorSet && set, ThreadSettings const& settings, OptimalArmors & optimal)
 {
-  const size_t stat = set.getStat(settings.optimizeFor, settings.baseDef);
+  size_t stat = set.getStat(settings.optimizeFor, settings.baseDef);
   auto && begin = optimal.begin();
   auto && end = optimal.end();
   while (begin != end)
   {
-    if (!begin->first ||
-      stat >
-      begin->second.getStat(settings.optimizeFor, settings.baseDef))
+    if (!begin->first || stat > begin->third)
     {
-      optimal.emplace(begin, true, set);
+      optimal.emplace(begin, true, set, stat);
       optimal.pop_back();
       return;
     }
@@ -134,7 +127,7 @@ Optimizer::Optimizer(AOSettings const & _settings)
 }
 
 Optimizer::Optimizer(AOSettings && _settings)
-  : settings{ std::move(_settings) }, optimal{ getEmpty() },
+  : settings{ _settings }, optimal{ getEmpty() },
   available{ settings.max_burden * settings.equipload - settings.build_weight }
 {
 }
@@ -181,8 +174,12 @@ bool Optimizer::Optimize()
   std::vector<Armor> toDivide = std::move(settings.AllowedGear[largest]);
   settings.AllowedGear[largest].resize(0);
 
+#ifdef _DEBUG
+  unsigned thread_count = 1;
+#else
   unsigned thread_count = std::thread::hardware_concurrency();
-  std::vector<std::thread> threads;
+#endif
+  std::vector<std::thread> threads; 
   threads.reserve(thread_count);
 
   std::vector<ThreadSettings> threadSettings;

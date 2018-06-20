@@ -35,7 +35,27 @@ struct AOSettings
 
 // maybe replace with dynarray and allow end-user to configure
 // valid armor set + armor set
-typedef std::list<std::pair<bool, ArmorSet>> OptimalArmors;
+template<typename T1, typename T2, typename T3> 
+struct triplet
+{
+  triplet(T1 const& _first, T2 const& _second, T3 const& _third)
+    : first{ _first }, second{ _second }, third{ _third } {}
+
+  T1 first;
+  T2 second;
+  T3 third;
+};
+
+template<typename T1, typename T2, typename T3>
+triplet<T1,T2,T3> make_triplet(T1 _first, T2 _second, T3 _third)
+{
+  return triplet < T1, T2, T3 >(_first, _second, _third);
+}
+
+
+
+
+typedef std::list<triplet<bool, ArmorSet, size_t>> OptimalArmors;
 class Optimizer
 {
 private:
